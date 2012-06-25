@@ -1,0 +1,14 @@
+Package: jetrix
+Version: @version@
+Section: games
+Priority: optional
+Architecture: all
+Depends: default-jre-headless
+Suggest: gtetrinet
+Maintainer: Emmanuel Bourg <smanux@lfjr.net>
+Homepage: http://jetrix.sourceforge.net
+Description: Jetrix TetriNET Server
+ Jetrix is a server hosting TetriNET games. TetriNET is a variant of
+ Tetris played over the internet and confronting up to six players 
+ simultaneously. Jetrix features a web based admnistration console to 
+ tune easily the settings of the server.
