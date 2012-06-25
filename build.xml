@@ -37,12 +37,11 @@
     <copy todir="${build}/java" filtering="on">
       <fileset dir="${src}/java" includes="**/*.java"/>
     </copy>
-    <fixcrlf srcdir="${build}/java" eol="lf" eof="remove" includes="**/*.java"/>
   </target>
 
   <target name="compile" depends="prepare">
     <!-- Compile the java code from ${src} into ${build} -->
-    <javac srcdir="${build}/java" destdir="${build}/classes" debug="${compile.debug}" optimize="${compile.optimize}">
+    <javac includeantruntime="false" srcdir="${build}/java" destdir="${build}/classes" debug="${compile.debug}" optimize="${compile.optimize}">
       <classpath>
         <path refid="classpath.main"/>
       </classpath>
@@ -58,7 +57,7 @@
 
   <target name="compile.servlet" depends="compile" description="Compile the Servlets">
     <mkdir dir="${build}/jsp"/>
-    <javac destdir="${build}/jsp" debug="yes">
+    <javac includeantruntime="false" destdir="${build}/jsp" debug="yes">
       <classpath>
         <pathelement path="${build}/classes/"/>
         <path refid="classpath.main"/>
